@@ -1,0 +1,44 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/php
+{
+	"name": "PHP",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/php:1-8.2-bullseye",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"remote.autoForwardPorts": false,
+				"editor.formatOnPaste": true,
+				"editor.formatOnSave": true,
+				"editor.minimap.enabled": false,
+				"editor.wordWrap": "on",
+				"[php]": {
+					"editor.defaultFormatter": "shufo.vscode-blade-formatter"
+				}
+			},
+			"extensions": [
+				"entexa.tall-stack",
+				"onecentlin.laravel-blade",
+				"Codeium.codeium"
+			]
+		}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		8000,
+		3000
+	],
+	"features": {
+		"ghcr.io/devcontainers-extra/features/composer:1": {},
+		"ghcr.io/devcontainers/features/node:1": {}
+	},
+	"postCreateCommand": "bash -c 'npm install && composer install && php artisan migrate --force'",
+	"postStartCommand": "bash -c 'npm run dev & php artisan serve'"
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
