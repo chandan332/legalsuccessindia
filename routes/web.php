@@ -8,6 +8,7 @@ use App\Http\Controllers\Resources\UserController;
 use App\Http\Controllers\Resources\OrderController;
 use App\Http\Controllers\Resources\TransactionController;
 use App\Http\Controllers\Resources\ProductController;
+use App\Livewire\Review;
 
 require __DIR__ . '/admin.php';
 
@@ -15,6 +16,7 @@ Route::view('/', 'pages.home');
 Route::view('/about', 'pages.about');
 Route::view('/services', 'pages.services');
 Route::view('/contact', 'pages.contact');
+Route::view('/review', 'pages.review');
 Route::view('/pricing', 'pages.pricing');
 Route::view('/copypricing', 'pages.copypricing');
 Route::view('/refundpolicy', 'pages.refundpolicy');

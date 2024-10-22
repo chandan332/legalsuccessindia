@@ -7,6 +7,7 @@
 
     <title>Legal Success India</title>
     <link rel="shortcut icon" href="/images/logo.png" type="image/png" />
+    {{-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js" defer></script> --}}
     @yield('head')
     <!-- Custom styles -->
     @vite(['resources/scss/app.scss', 'resources/ts/app.ts'])

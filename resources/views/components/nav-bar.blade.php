@@ -10,17 +10,6 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item me-2">
-                    <a class="nav-link" aria-current="page"
-                        href="@auth('web'){{ route('logout') }} @else {{ route('login') }} @endauth">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        @if (Auth::check())
-                            Logout
-                        @else
-                            Login
-                        @endif
-                    </a>
-                </li>
-                <li class="nav-item me-2">
                     <a class="nav-link @if ($route == '/') active @endif" aria-current="page"
                         href="/"><i class="fa-solid fa-house"></i> Home</a>
                 </li>
@@ -35,6 +24,17 @@
                         href="/contact">
                         <i class="fa-solid fa-address-book"></i>
                         Contact us
+                    </a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="nav-link" aria-current="page"
+                        href="@auth('web'){{ route('logout') }} @else {{ route('login') }} @endauth">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        @if (Auth::check())
+                            Logout
+                        @else
+                            Login
+                        @endif
                     </a>
                 </li>
                 <li class="nav-item me-2">

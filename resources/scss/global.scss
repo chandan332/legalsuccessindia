@@ -1,20 +1,14 @@
-@font-face {
-    font-family: "Lato";
-    src: url("../assets/font/lato/lato-regular-webfont.woff2") format("woff2"),
-        url("../assets/font/lato/lato-regular-webfont.woff") format("woff");
-}
-
 @import "../assets/font/Poppins/stylesheet.css";
 
 body {
-    font-family: "Lato", sans-serif;
+    font-family: "poppins", sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// * {
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+// }
 
 li {
     list-style: none;
@@ -26,11 +20,11 @@ ol {
     padding: 0;
 }
 
-footer ul > li {
+footer ul>li {
     margin: 10px 0px;
 }
 
-footer ul > li > a {
+footer ul>li>a {
     text-decoration: none;
     color: inherit;
 }
@@ -47,4 +41,31 @@ footer ul > li > a {
 .show {
     --translate-y: 0%;
     opacity: 1;
+}
+
+.dash {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        border-radius: 100px;
+        height: 100%;
+        background-color: hsl(0, 50%, 50%);
+    }
+}
+
+.swiper.mask-image {
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 90%);
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 90%);
+}
+
+@media screen and (max-width: 768px) {
+    .swiper.mask-image {
+        mask-image: unset;
+        -webkit-mask-image: unset;
+    }
 }
