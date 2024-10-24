@@ -69,3 +69,20 @@ footer ul>li>a {
         -webkit-mask-image: unset;
     }
 }
+
+.accordion {
+    .accordion-item {
+        @apply tw-mb-2;
+
+        .accordion-button {
+            @apply tw-relative tw-bg-gray-500 tw-text-white;
+            box-shadow: none;
+
+            &::after {
+                content: '+';
+                width: 0%;
+                transform: none;
+            }
+        }
+    }
+}

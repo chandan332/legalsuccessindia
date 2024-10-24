@@ -43,7 +43,7 @@ Route::controller(PaymentController::class)->group(function () {
 });
 
 Route::controller(FormController::class)->group(function () {
-    Route::get("/application", 'showForm')->name('form.show');
+    Route::get("/application/{id}", 'showForm')->name('form.show');
     Route::post("/application", 'submitForm')->name("form.submit");
 });
 

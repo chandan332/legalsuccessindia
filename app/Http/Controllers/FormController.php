@@ -12,9 +12,9 @@ class FormController extends Controller
     {
         $this->clients = new ClientController();
     }
-    public function showForm()
+    public function showForm(string $id)
     {
-        return view('pages.application');
+        return view('pages.application', compact('id'));
     }
 
     public function submitForm(Request $request)

@@ -35,7 +35,7 @@
 		"ghcr.io/devcontainers-extra/features/composer:1": {},
 		"ghcr.io/devcontainers/features/node:1": {}
 	},
-	"postCreateCommand": "bash -c 'npm install && composer install && php artisan migrate --force'",
+	"postCreateCommand": "bash -c 'npm install && composer install && php artisan migrate --force && php artisan storage:link'",
 	"postStartCommand": "bash -c 'npm run dev & php artisan serve'"
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
