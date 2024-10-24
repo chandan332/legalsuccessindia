@@ -1,178 +1,247 @@
-@extends('layouts.root', ['route' => '/application'])
+@extends('layouts.application')
 
-@php
-    $states = [
-        'Andhra Pradesh',
-        'Arunachal Pradesh',
-        'Assam',
-        'Bihar',
-        'Chhattisgarh',
-        'Goa',
-        'Gujarat',
-        'Haryana',
-        'Himachal Pradesh',
-        'Jharkhand',
-        'Karnataka',
-        'Kerala',
-        'Madhya Pradesh',
-        'Maharashtra',
-        'Manipur',
-        'Meghalaya',
-        'Mizoram',
-        'Nagaland',
-        'Odisha',
-        'Punjab',
-        'Rajasthan',
-        'Sikkim',
-        'Tamil Nadu',
-        'Telangana',
-        'Tripura',
-        "Uttar
-    Pradesh",
-        'Uttarakhand',
-    ];
+{{-- @php
+    $id = request()->id ?? 'License';
+@endphp --}}
 
-    $cards = [
-        [
-            'title' => 'Reach out to our Experts',
-            'body' => 'We have the best business experts who can resolve all your queries',
-            'image' => '/images/tech-support.gif',
-        ],
-        [
-            'title' => 'Provide all the required documents',
-            'body' => 'Provide all the documents. Our team will initiate the paperwork on your behalf',
-            'image' => '/images/document.gif',
-        ],
-        [
-            'title' => 'Get your Fssai Registration done',
-            'body' => 'Registration is completed and the certificates will be sent to you.',
-            'image' => '/images/user.webp',
-        ],
-    ];
-@endphp
-
-@section('head')
-    <meta name="description"
-        content="Discover the simple step-by-step process to apply for your FSSAI license online. Ensure food safety compliance and legal approval for your business" />
-
-    <meta name="keywords"
-        content="fssai registration, fssai renewal, fssai certificate, fssai license renewal, fssai licence, food safety certificate online, food license apply, fssai registration online, food license renewal, food licence apply, foscos renewal, fssai license registration, fssai renewal online, fssai license fee, fssai apply online, food licence registration, fssai registration fees, food licence renewal, fssai food license, food safety and standards authority of india, apply for fssai license, fssai licence renewal, food license fees, food licence online, fssai license apply online, food license apply online, food licence apply online, food license online apply, fssai certificate download, food license telangana, online food licence apply, fssai registration renewal, fssai license renewal online," />
-@endsection
-
-@section('content')
-    <div class="ff-poppins">
-        <div class="row">
-            <div class="col-md-4 hidden">
-                <div class="h-100 d-flex flex-column justify-content-center align-items-center gap-2 text-center ">
-                    <h1 class="text-decoration-underline fw-bold">Apply FSSAI Food License</h1>
-                    <h3 class="fw-semibold">Package Starts from <br /><span
-                            class="text-danger text-decoration-line-through">₹1999</span> ₹999</h3>
-                    <p class="">The fastest FSSAI registration portal online, hands down. Application for 50,000 Food
-                        Licenses Completed Since 2023.</p>
+@section('faq')
+    @if ($id == 'License')
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item ">
+                <h2 class="accordion-header ">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        What is FSSAI registration?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        The Food Safety and Standards Authority of India (FSSAI) is the regulatory body responsible for
+                        establishing standards for food safety and regulating its supply in India.
+                    </div>
                 </div>
             </div>
-            <div class="col-md-5 ms-auto mt-4 px-4 fw-semibold hidden">
-                <img src="{{ Vite::image('fssai_update.jpg') }}" alt="">
-                <h3 class="text-center">Get FREE Consultation <br /> from <span class="text-danger">FSSAI Expert</span></h3>
-                <form class="needs-validation " action="{{ route('form.submit') }}" method="POST" novalidate>
-                    @csrf
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Your name"
-                            required />
-                        <div class="invalid-feedback">
-                            Please provide a full name...
-                        </div>
-                    </div>
-                    <div class="mb-3 tw-hidden">
-                        <label for="email" class="form-label">Email Address<span class="text-danger">*</span></label>
-                        <input type="email" class="form-control " id="email" name="email" placeholder="Your email"
-                            value="noreply@fssai.com" required />
-                        <div class="invalid-feedback">
-                            Please provide a valid email...
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="number" class="form-control" id="phone" name="phone"
-                            placeholder="Your phone number" required />
-                        <div class="invalid-feedback">
-                            Please provide a valid phone number...
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="state" class="form-label">State</label>
-                        <select class="form-select" id="state" name="state" aria-label="Default select example"
-                            required>
-                            <option value="West Bengal" selected>
-                                West Bengal
-                            </option>
-                            @foreach ($states as $state)
-                                <option value="{{ $state }}">{{ $state }}</option>
-                            @endforeach
-                        </select>
-                    </div>
 
-                    <div class="mb-3 tw-hidden">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control text-start " id="message" name="message" rows="3">
-                            I have signed up!
-                        </textarea>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Who needs FSSAI registration?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Any food business operator (FBO) involved in the manufacturing, processing, packaging, or selling of
+                        food products needs to obtain an FSSAI registration.
                     </div>
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-dark btn-sm">Get Started</button>
-                    </div>
-                </form>
+                </div>
             </div>
-        </div>
 
-        <div class="row gap-2 mt-4 hidden">
-            <div class="col tw-max-w-[1024px] m-auto">
-                <h1 class="text-center fw-bold tw-underline">Sample Certificate</h1>
-                <div class="tw-flex tw-flex-col tw-items-center mt-4 overflow-y-auto">
-                    <img src="{{ Vite::image('certificate/1.jpg') }}" alt="" class="img-fluid">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What are the types of FSSAI licenses?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong> There are three types of licenses:</strong>
+                        <ul>
+                            <li> <code> FSSAI Registration:</code> For small-scale businesses
+                                with
+                                an annual turnover below
+                                ₹12 lakh.</li>
+                            <li> <code> State License:</code> For medium-sized businesses with
+                                an annual turnover between ₹12 lakh and
+                                ₹20
+                                crore.</li>
+                            <li><code> Central License:</code> For large businesses with an
+                                annual turnover exceeding ₹20 crore or for
+                                businesses
+                                involved in import/export.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        How can I apply for FSSAI registration?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        You can apply online through the FSSAI website by filling out the application form, submitting the
+                        required documents, and paying the applicable fees.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        What documents are required for FSSAI registration?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Commonly required documents include:</strong>
+                        <ul class="tw-ms-4">
+                            <li class="tw-list-disc">Identity proof (Aadhaar, PAN, etc.)</li>
+                            <li class="tw-list-disc">Address proof</li>
+                            <li class="tw-list-disc">Business registration certificate</li>
+                            <li class="tw-list-disc">Food safety management plan</li>
+                            <li class="tw-list-disc">No objection certificate (if applicable)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        What are the penalties for not having FSSAI registration?
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Operating without an FSSAI registration can lead to penalties, including fines and imprisonment,
+                        depending on the severity of the violation.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        can I operate without FSSAI license?
+                    </button>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong> No, you cannot operate a food business in India without an FSSAI license.</strong>
+                        <ul class="tw-ms-4">
+                            <li class="tw-list-disc">An FSSAI license is mandatory for all food business operators (FBOs)
+                                involved in manufacturing, processing, packaging, or selling food products.</li>
+                            <li class="tw-list-disc">Operating without a license can lead to legal consequences, including
+                                fines, closure of the business, or imprisonment.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        How much time does it take to get FSSAI certificate?
+                    </button>
+                </h2>
+                <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ul class="tw-ms-4">
+                            <li class="tw-list-disc"><code>Basic Registration:</code> Typically takes about 7 to 10 days.
+                            </li>
+                            <li class="tw-list-disc"><code>State License:</code> Generally takes around 30 days.</li>
+                            <li class="tw-list-disc"><code>Central License:</code> Can take 30 to 60 days or more,
+                                depending on the complexity.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div>
-            <h1 class="col-md-10 m-auto mt-4 text-center fw-bold">How To do Your Fssai Registration through <br /><span
-                    class="text-danger">Legal Success India?</span></h1>
-            <div class="row g-4">
-                @foreach ($cards as $card)
-                    <div class="col-md-4 hidden" style="--transition-delay: {{ $loop->iteration * 0.5 }}s">
-                        <div class="card text-center h-100 border-0">
-                            <img src="{{ $card['image'] }}" class="card-img-top tw-w-1/3 md:tw-w-2/5  m-auto"
-                                alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">{{ $card['title'] }}</h5>
-                                <p class="card-text fw-medium">{{ $card['body'] }}</p>
-                            </div>
-                        </div>
+    @elseif ($id == 'Renewal')
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item ">
+                <h2 class="accordion-header ">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is FSSAI registration renewal?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        It is the process of extending the validity of your FSSAI registration to continue operating legally
+                        in the food business.
                     </div>
-                @endforeach
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        when should I renew my FSSAI registration?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Renewals should be completed at least 30 days before the expiration date of your
+                        current registration.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What documents are required for FSSAI renewal?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Commonly required documents include:
+                        </strong>
+                        <ul class="tw-ms-4">
+                            <li class="tw-list-disc">Application form (Form B)
+                            </li>
+                            <li class="tw-list-disc">Copy of the current FSSAI registration
+                            </li>
+                            <li class="tw-list-disc">Proof of address
+                            </li>
+                            <li class="tw-list-disc">Food safety management system documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        How can I apply for FSSAI renewal?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        FSSAI license renewal can typically be done online through US.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        How much does it cost to renew an FSSAI license?
+                    </button>
+                </h2>
+                <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        The cost to renew an FSSAI license in India varies depending on the type of license (basic, state,
+                        or central) and the size of the business. Generally, the renewal fees can range from a few hundred
+                        to several thousand rupees. It's best to check the official FSSAI website or consult with local
+                        authorities for specific fees related to your business type and scale.
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    @endsection @section('script')
-    <script>
-        (() => {
-            "use strict";
-            const forms = document.querySelectorAll(".needs-validation");
-            Array.from(forms).forEach((form) => {
-                form.addEventListener(
-                    "submit",
-                    (event) => {
-                        if (!form.checkValidity()) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-
-                        form.classList.add("was-validated");
-                    },
-                    false
-                );
-            });
-        })();
-    </script>
+    @endif
 @endsection

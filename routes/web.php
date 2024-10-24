@@ -8,7 +8,6 @@ use App\Http\Controllers\Resources\UserController;
 use App\Http\Controllers\Resources\OrderController;
 use App\Http\Controllers\Resources\TransactionController;
 use App\Http\Controllers\Resources\ProductController;
-use App\Livewire\Review;
 
 require __DIR__ . '/admin.php';
 
@@ -43,7 +42,7 @@ Route::controller(PaymentController::class)->group(function () {
 });
 
 Route::controller(FormController::class)->group(function () {
-    Route::get("/application", 'showForm')->name('form.show');
+    Route::get("/application/{id?}", 'showForm')->whereIn('id', ['License', 'Renewal'])->name('form.show');
     Route::post("/application", 'submitForm')->name("form.submit");
 });
 

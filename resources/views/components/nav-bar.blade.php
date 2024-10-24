@@ -46,10 +46,12 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="{{ route('form.show') }}">Food Application</a>
+                                <a class="dropdown-item" href="{{ route('form.show', ['id' => 'License']) }}">FSSAI
+                                    License</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="{{ route('form.show') }}">Food Renewal</a>
+                                <a class="dropdown-item" href="{{ route('form.show', ['id' => 'Renewal']) }}">FSSAI
+                                    Renewal</a>
                             </li>
                         </ul>
                     </div>

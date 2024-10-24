@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Review as ReviewModel;
 
 class Review extends Component
 {
@@ -17,7 +18,7 @@ class Review extends Component
     #[Validate('required|numeric|min:1|max:5')]
     public $stars = 5;
 
-    #[Validate('required|image|max:1024')]
+    #[Validate('nullable|image|max:1024')]
     public $photo;
 
     #[Validate('required|string')]
@@ -33,8 +34,13 @@ class Review extends Component
     public function submit()
     {
         $validated = $this->validate();
-        $validated['photo'] = $this->photo->store('uploads', 'public');
-        $url = Storage::url($validated['photo']);
+        if($this->photo) {
+            $validated['photo'] = $this->photo->store('uploads', 'public');
+            $url = Storage::url($validated['photo']);
+        } else {
+            $url = '';
+        }
+        ReviewModel::create(['name' => $validated['name'], 'rating' => $validated['stars'], 'imagePath' => $url, 'message' => $validated['message']]);
         session()->flash('message', 'File uploaded successfully.');
         $this->reset();
     }
@@ -42,6 +48,6 @@ class Review extends Component
     public function render()
     {
         $this->open = session()->has('message');
-        return view('livewire.review');
+        return view('livewire.review', ['reviews' => ReviewModel::all()]);
     }
 }

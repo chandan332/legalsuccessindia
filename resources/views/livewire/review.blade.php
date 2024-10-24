@@ -66,8 +66,7 @@
                 for="photo">Upload Image</label>
             <input
                 class="tw-bg-gray-50 tw-border tw-border-gray-300 tw-text-gray-900 tw-text-sm tw-rounded-lg focus:tw-ring-blue-500 focus:tw-border-blue-500 tw-block tw-w-full tw-p-2.5 dark:tw-bg-gray-700 dark:tw-border-gray-600 dark:tw-placeholder-gray-400 dark:tw-text-white dark:focus:tw-ring-blue-500 dark:focus:tw-border-blue-500"
-                id="photo" wire:model.blur="photo" type="file" accept="image/png, image/jpg, image/jpeg"
-                required>
+                id="photo" wire:model.blur="photo" type="file" accept="image/png, image/jpg, image/jpeg">
             <sapn class="tw-text-red-500">
                 @error('photo')
                     {{ $message }}
@@ -76,7 +75,6 @@
         </div>
         <div class="tw-mb-6">
             <div wire:loading wire:target="photo">
-
                 <div role="status">
                     <svg aria-hidden="true"
                         class="tw-w-8 tw-h-8 tw-text-gray-200 tw-animate-spin dark:tw-text-gray-600 tw-fill-blue-600"

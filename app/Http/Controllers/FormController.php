@@ -12,9 +12,10 @@ class FormController extends Controller
     {
         $this->clients = new ClientController();
     }
-    public function showForm()
+    public function showForm(string $id = null)
     {
-        return view('pages.application');
+        if(!$id) $id="License";
+        return view('pages.application', compact('id'));
     }
 
     public function submitForm(Request $request)
