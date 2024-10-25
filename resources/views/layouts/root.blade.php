@@ -11,6 +11,7 @@
     @yield('head')
     <!-- Custom styles -->
     @vite(['resources/scss/app.scss', 'resources/ts/app.ts'])
+    @livewireStyles
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16674432877"></script>
@@ -89,8 +90,10 @@
     <div class="container overflow-hidden">
         <!-- Navbar -->
         <x-nav-bar :route="$route" />
+
         <!-- Content -->
         @yield('content')
+        
         <!-- Footer -->
         <x-footer />
     </div>
@@ -110,8 +113,7 @@
         </div>
     </div>
     @yield('script')
-    {{-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9WWSRQG" height="0" width="0"
-            style="display: none; visibility: hidden"></iframe></noscript> --}}
+    @livewireScripts
 </body>
 
 </html>

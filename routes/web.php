@@ -11,6 +11,10 @@ use App\Http\Controllers\Resources\ProductController;
 
 require __DIR__ . '/admin.php';
 
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});
+
 Route::view('/', 'pages.home');
 Route::view('/about', 'pages.about');
 Route::view('/services', 'pages.services');

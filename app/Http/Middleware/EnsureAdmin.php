@@ -18,6 +18,6 @@ class EnsureAdmin
         if ($request->session()->has('admin'))
             if ($request->session()->get('admin'))
                 return $next($request);
-        return redirect()->route('admin.login.page');
+        return redirect()->route('admin.login');
     }
 }

@@ -4,7 +4,7 @@
     $id = request()->id ?? 'License';
 @endphp --}}
 
-@section('faq')
+{{-- @section('faq')
     @if ($id == 'License')
         <div class="accordion" id="accordionExample">
             <div class="accordion-item ">
@@ -244,4 +244,4 @@
             </div>
         </div>
     @endif
-@endsection
+@endsection --}}

@@ -22,10 +22,10 @@
         <h1 class="tw-mb-4 tw-text-3xl tw-font-extrabold tw-tracking-tight  md:tw-text-6xl lg:tw-text-7xl ">
             <span class="tw-text-transparent tw-bg-clip-text tw-bg-gradient-to-r tw-to-emerald-600 tw-from-sky-400"> Experts
                 in Law and
-                Compliance </span> Serving More Than 10% of Indian Businesses
+                Compliance </span> Serving a Significant Number of Indian Businesses
         </h1>
         <div>
-            <a href="#"
+            <a href="/application"
                 class="tw-inline-flex tw-items-center tw-justify-center tw-px-5 tw-py-3 tw-text-base tw-font-medium tw-text-white tw-bg-blue-700 tw-rounded-lg hover:tw-bg-blue-800 focus:tw-ring-4 focus:tw-ring-blue-300 dark:tw-focus:ring-blue-900">
                 Get Started
                 <svg class="tw-w-3.5 tw-h-3.5 tw-ms-2 rtl:tw-rotate-180" aria-hidden="true"
@@ -37,7 +37,7 @@
         </div>
         <div class="tw-flex tw-flex-col tw-gap-2">
             <p class="tw-text-sm tw-font-normal lg:tw-text-md tw-text-gray-500 dark:tw-text-gray-400">
-                Trusted by countless satisfied clients.</p>
+                Trusted by over 1000+ clients.</p>
             <p class="tw-text-sm tw-font-normal lg:tw-text-md tw-text-gray-500 dark:tw-text-gray-400">
                 @for ($i = 0; $i < 5; $i++)
                     <i class="fa-solid fa-star fa-bounce tw-text-[#ff8a02]"></i>
@@ -47,7 +47,7 @@
     </div>
 
     {{-- Middle Section --}}
-    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 ">
+    {{-- <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 ">
         <div class="tw-flex tw-flex-col tw-gap-4">
             <div class="dash">
                 <h3 class="tw-text-4xl tw-text-center tw-font-extrabold dark:tw-text-white tw-ms-4">How Our Team Works?</h3>
@@ -58,18 +58,14 @@
                     comprehensive
                     range
                     of online
-                    legal services designed for your convenience. Our team consists of experienced professionals, and we
-                    want to
-                    make it clear that we are not affiliated with any government agency. The form available on our
-                    website
-                    is
-                    intended solely for gathering information to enhance our services for clients. By choosing to work
-                    with
-                    us,
+                    legal services designed for your convenience. Our team consists of experienced professionals, and
+                    <span class="tw-font-bold">important:</span> we are an independent private entity and are not affiliated
+                    with any government agency. The forms on our website are for consultation purposes only and ain't
+                    official registration forms to enhance our services for clients. By choosing to work with us,
                     you acknowledge that we are a private entity providing consultancy services for a fee. Simplify your
-                    business registration process with our expertise today. Join the community of over 10,000 satisfied
-                    clients
-                    and benefit from our impressive 4.9 out of 5.0 rating on Google.</p>
+                    business registration process with our expertise today. Our services have received 4.9/5 ratings by
+                    clients on google, contributing to a strong rating on google.
+                </p>
             </div>
             <div class="dash">
                 <div class="tw-flex tw-flex-row tw-gap-4 tw-ms-4">
@@ -85,16 +81,14 @@
             </div>
         </div>
         <div class="tw-p-4">
-            <img class="tw-rounded-2xl"
-                src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixid=M3wzOTE5Mjl8MHwxfHNlYXJjaHw1fHxsZWdhbCUyMGNvbnN1bHRhbmN5fGVufDB8fHx8MTcyNjAwNTY0Nnww&ixlib=rb-4.0.3&auto=format&fit=crop&w=562&h=480"
-                alt="">
+            <img class="tw-rounded-2xl" src="{{ Vite::image('legalsuccessindia.jpg') }}" alt="" />
         </div>
-    </div>
+    </div> --}}
 
     {{-- Middle Section --}}
     <div class="tw-flex tw-flex-col tw-items-center tw-justify-center">
-        <h1 class="tw-mb-4 tw-text-3xl tw-font-extrabold tw-tracking-tight tw-underline md:tw-text-4xl ">
-            Reviews
+        <h1 class="tw-mb-4 tw-text-3xl tw-font-extrabold tw-tracking-tight tw-underline md:tw-text-4xl tw-text-center ">
+            What Our Clients Say About Us
         </h1>
         @livewire('customer')
     </div>
@@ -125,7 +119,7 @@
                         Name</label>
                     <input type="text" id="name"
                         class="tw-bg-gray-50 tw-border tw-border-gray-300 tw-text-gray-900 tw-text-sm tw-rounded-lg focus:tw-ring-blue-500 focus:tw-border-blue-500 tw-block tw-w-full tw-p-2.5 dark:bg-gray-700 dark:tw-border-gray-600 dark:tw-placeholder-gray-400 dark:tw-text-white dark:focus:tw-ring-blue-500 dark:focus:tw-border-blue-500"
-                        placeholder="john.doe@company.com" required />
+                        placeholder="Enter Your Name" required />
                 </div>
                 <div class="tw-mb-6">
                     <label for="email"
@@ -133,7 +127,7 @@
                         address</label>
                     <input type="email" id="email"
                         class="tw-bg-gray-50 tw-border tw-border-gray-300 tw-text-gray-900 tw-text-sm tw-rounded-lg focus:tw-ring-blue-500 focus:tw-border-blue-500 tw-block tw-w-full tw-p-2.5 dark:bg-gray-700 dark:tw-border-gray-600 dark:tw-placeholder-gray-400 dark:tw-text-white dark:focus:tw-ring-blue-500 dark:focus:tw-border-blue-500"
-                        placeholder="john.doe@company.com" required />
+                        placeholder="Enter Your Email" required />
                 </div>
                 <div class="tw-mb-6">
                     <label for="phone"
@@ -141,7 +135,7 @@
                         Number</label>
                     <input type="tel" id="phone"
                         class="tw-bg-gray-50 tw-border tw-border-gray-300 tw-text-gray-900 tw-text-sm tw-rounded-lg focus:tw-ring-blue-500 focus:tw-border-blue-500 tw-block tw-w-full tw-p-2.5 dark:bg-gray-700 dark:tw-border-gray-600 dark:tw-placeholder-gray-400 dark:tw-text-white dark:focus:tw-ring-blue-500 dark:focus:tw-border-blue-500"
-                        placeholder="john.doe@company.com" required />
+                        placeholder="Enter Your Phone" required />
                 </div>
                 <div class="tw-mb-6">
                     <label for="message"

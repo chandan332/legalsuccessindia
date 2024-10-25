@@ -12,6 +12,7 @@ Route::prefix("v1")->group(function () {
     Route::controller(ClientController::class)->group(function () {
         Route::get("/clients", 'index')->name("client.get");
         Route::get("/clients/{id}", 'show')->name("client.get.id");
-        Route::post("/clients/{id}", 'destroy')->name("client.destroy.id");
+        Route::put("/clients/{id}", 'update')->name("client.update.id");
+        Route::delete("/clients/{id}", 'destroy')->name("client.destroy.id");
     });
 });

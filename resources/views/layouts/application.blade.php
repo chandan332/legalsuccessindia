@@ -65,22 +65,26 @@
         <div class="col-md-4 ">
             <div class="h-100 d-flex flex-column justify-content-center align-items-center gap-2 text-center ">
                 <h1 class="text-decoration-underline tw-text-2xl fw-bold">Apply FSSAI Food License</h1>
-                <h3 class="fw-semibold tw-mb-4">Package Starts from <span
-                        class="text-danger text-decoration-line-through">₹1999</span> ₹999</h3>
-                <p class="tw-text-sm">The fastest FSSAI registration portal online, hands down. Application for 50,000
+                <h3 class="fw-semibold tw-mb-4">Limited Time Offer:<br /> FSSAI registration {{ $id }} package
+                    starting at ₹999,
+                    including initial consultation and document preparation </h3>
+                {{-- <p class="tw-text-sm">The fastest FSSAI registration portal online, hands down. Application for 50,000
                     Food
-                    Licenses Completed Since 2023.</p>
+                    Licenses Completed Since 2023.</p> --}}
+                <p class="tw-text-sm">we aim to provide efficient FSSAI registration services, with applications for over
+                    50,000 Food Licenses completed since 2023. This sounds more credible and less sensational. </p>
             </div>
         </div>
         <div class="col-md-5 ms-auto mt-4 px-4 fw-semibold ">
             <img src="{{ Vite::image('fssai_update.jpg') }}" alt="">
-            <h3 class="text-center">FSSAI Registration {{ $id }}</span></h3>
+            <h3 class="text-center">FSSAI
+                {{ $id }}</span></h3>
             <form class="needs-validation tw-mt-4" action="{{ route('form.submit') }}" method="POST" novalidate>
                 @csrf
                 <div class="mb-3">
                     {{-- <label for="name" class="form-label">Name<span class="text-danger">*</span></label> --}}
                     <input type="text" class="form-control tw-bg-gray-100 tw-py-3" id="name" name="name"
-                        placeholder="Your name" required />
+                        placeholder="Enter Your Name" required />
                     <div class="invalid-feedback">
                         Please provide a full name...
                     </div>
@@ -88,7 +92,7 @@
                 <div class="mb-3 tw-hidden">
                     {{-- <label for="email" class="form-label">Email Address<span class="text-danger">*</span></label> --}}
                     <input type="email" class="form-control tw-bg-gray-100 tw-py-3" id="email" name="email"
-                        placeholder="Your email" value="noreply@fssai.com" required />
+                        placeholder="Enter Your Email" value="noreply@fssai.com" required />
                     <div class="invalid-feedback">
                         Please provide a valid email...
                     </div>
@@ -96,7 +100,7 @@
                 <div class="mb-3">
                     {{-- <label for="phone" class="form-label">Phone Number</label> --}}
                     <input type="number" class="form-control tw-bg-gray-100 tw-py-3" id="phone" name="phone"
-                        placeholder="Your phone number" required />
+                        placeholder="Enter Your Phone Number" required />
                     <div class="invalid-feedback">
                         Please provide a valid phone number...
                     </div>
@@ -162,189 +166,57 @@
         </div>
     </div>
 
-    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2">
-        <div class="tw-order-2 md:tw-order-1">
+    <div>
+        <h1 class="tw-mb-4 tw-text-xl md:tw-text-2xl tw-font-extrabold tw-text-red-600 ">
+            Disclaimer:
+        </h1>
+        <ul>
+            <li class="mb-4">
+                <p class="tw-text-sm tw-font-semibold"><span class="tw-text-red-600">1.</span> <span class="tw-font-extrabold">Reason for FSSAI Registration</span> <br/> FSSAI registration ensures your food business complies with India’s food safety laws, guaranteeing consumers high-quality and safe products, essential for legal operation and credibility.</p>
+            </li>
+            <li class="mb-4">
+                <p class="tw-text-sm tw-font-semibold"><span class="tw-text-red-600">2.</span> <span class="tw-font-extrabold">Benefits of FSSAI Registration</span> <br/>FSSAI certification builds consumer trust, enhances your brand image, supports business expansion, and helps prevent legal issues by demonstrating commitment to food safety and quality.
+                </p>
+            </li>
+            <li class="mb-4">
+                <p class="tw-text-sm tw-font-semibold"><span class="tw-text-red-600">3.</span> <span class="tw-font-extrabold">FSSAI License Categories</span> <br/>FSSAI offers three license types based on business size and turnover: Basic Registration for small businesses, State License for medium-scale, and Central License for large-scale operations.
+                </p>
+            </li>
+            <li class="mb-4">
+                <p class="tw-text-sm tw-font-semibold"><span class="tw-text-red-600">4.</span> <span class="tw-font-extrabold">Document Requirements for FSSAI Registration</span> <br/>Documents needed include a completed application form, identity proof, business registration proof, and a detailed food safety management plan to verify operational compliance with FSSAI standards.</p>
+            </li>
+            <li class="mb-4">
+                <p class="tw-text-sm tw-font-bold"><span class="tw-text-red-600">5. </span>We offer guidance and information
+                    about government services but don't directly process applications. Our role is to provide information
+                    and guidance to help you avoid potential legal issues.
+                    However, please
+                    note that any information provided on this website is for informational purposes only and does not
+                    constitute legal
+                    advice.
 
-            <div>
-                <h1 class="tw-mb-4 tw-text-xl md:tw-text-2xl tw-font-extrabold tw-text-red-600 ">
-                    FSSAI Registration Overview:
-                </h1>
-                <ul>
-                    <li class="mb-4">
-                        <p class="tw-text-sm tw-font-bold">FSSAI, or
-                            the
-                            Food Safety and Standards Authority of India, is a regulatory body established by the Indian
-                            government to ensure the safety and quality of food products in the country. Its primary role is
-                            to
-                            set and enforce food safety standards, regulate the manufacture, storage, distribution, sale,
-                            and
-                            import of food items, and promote public health by safeguarding food quality. FSSAI plays a
-                            crucial
-                            role in monitoring and controlling food-related issues in India, enhancing consumer awareness,
-                            and
-                            supporting the food industry in adhering to food safety standards.</p>
-                    </li>
-                    <li class="mb-4">
-                        <p class="tw-text-sm tw-font-bold">Setting
-                            Standards: FSSAI Registration establishes standards for various food products, including their
-                            composition, additives, contaminants, and labeling requirements. These standards aim to ensure
-                            the
-                            safety and quality of food products.</p>
-                    </li>
-                    <li class="mb-4">
-                        <p class="tw-text-sm tw-font-bold">Licensing
-                            and
-                            Registration: FSSAI Registration requires food businesses to obtain licenses or registrations
-                            based
-                            on the scale of their operations. This helps in maintaining a database of food businesses and
-                            ensures compliance with safety and hygiene standards.</p>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h1 class="tw-mb-4 tw-text-xl md:tw-text-2xl tw-font-extrabold tw-text-red-600 ">
-                    Monitoring and Surveillance:
-                </h1>
-                <ul>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">FSSAI Registration conducts regular inspections and monitoring of
-                            food businesses to ensure adherence to prescribed standards. This includes testing food product
-                            samples for quality and safety.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">Consumer Awareness: FSSAI Registration contributes to creating
-                            awareness among consumers about food safety and healthy eating habits. It provides information
-                            and education to help the public make informed food choices.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">Enforcement: FSSAI Registration has the authority to take action
-                            against non-compliant businesses, including issuing warnings, fines, and, if necessary, legal
-                            actions.</p>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h1 class="tw-mb-4 tw-text-xl md:tw-text-2xl tw-font-extrabold tw-text-red-600 ">Research and Development:
-                </h1>
-                <ul>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">FSSAI Registration promotes research in food safety and
-                            standards. It collaborates with various institutions to enhance scientific understanding of food
-                            safety issues.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">Capacity Building: FSSAI Registration offers training and
-                            capacity-building programs to food businesses, regulators, and other stakeholders to improve
-                            their knowledge of food safety regulations and best practices.</p>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h1 class="tw-mb-4 tw-text-xl md:tw-text-2xl tw-font-extrabold tw-text-red-600">Benefits of Having a Food
-                    License:</h1>
-                <ul>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">1. Legal Compliance: Ensures your business operates within the
-                            legal framework defined by the government. Operating without a valid food license can lead to
-                            penalties, business closure, and legal issues.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">2. Consumer Trust and Confidence: An FSSAI license enhances
-                            your credibility and demonstrates your commitment to food safety and quality, building trust
-                            among consumers and fostering customer loyalty.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">3. Market Access: Many distributors, retailers, and larger
-                            establishments require an FSSAI license. Holding the license allows access to a broader range of
-                            markets, including institutional buyers and retail chains.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">4. Business Expansion: An FSSAI license is often required for
-                            obtaining loans, grants, or support from financial institutions or government bodies when
-                            expanding your business.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">5. Differentiation: In a competitive market, a Food License
-                            distinguishes you from unregulated competitors. Consumers are more likely to choose products
-                            from businesses compliant with food safety regulations.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">6. Quality Assurance: An FSSAI license signifies adherence to
-                            specific quality and safety standards, helping maintain consistent product quality, which is
-                            essential for customer retention.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">7. Consumer Safety: Ensures the safety of your products,
-                            minimizing the risk of foodborne illnesses and contamination, and protecting your customers'
-                            health.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">8. Legal Protection: In case of food-related incidents or
-                            legal issues, an FSSAI license can serve as evidence that your business followed established
-                            safety and hygiene guidelines, providing legal protection.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">9. Business Reputation: Contributes to a positive reputation
-                            for your business. Positive word-of-mouth recommendations and online reviews are more likely
-                            when customers view your products as safe and high-quality.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">10. Export Opportunities: Facilitates smoother export
-                            processes by ensuring your products meet the necessary safety and quality standards for
-                            international markets.</p>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h1 class="tw-mb-4 tw-text-xl md:tw-text-2xl tw-font-extrabold tw-text-red-600">Requirement of FSSAI
-                    License:</h1>
-                <ul>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">- Application Form: The relevant application form must be filled
-                            out accurately.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">- Business Details: Information about the nature of the food
-                            business, the type of food products, and food processing methods.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">- Business Address Proof: Valid proof of the business's physical
-                            address, such as a rental agreement, utility bill, or property tax receipt.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">- Proprietor/Partner/Director Details: Identity proof and
-                            address proof of the proprietor, partners, or directors.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">- Food Safety Management System Plan: A written plan describing
-                            the food safety management system.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">- Equipment List: List of equipment and machinery used in the
-                            food business.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">- Process Flow Diagram: A diagram illustrating the flow of food
-                            processing and handling.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">- Proof of Premises Possession: Proof of legal possession of the
-                            premises where food-related activities are conducted.</p>
-                    </li>
-                    <li class="tw-mb-4">
-                        <p class="tw-text-sm tw-font-bold">- No Objection Certificate (NOC): NOC from the local
-                            municipality or relevant authorities.</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="tw-self-center tw-order-1 md:tw-order-2">
-            <img src="https://assets.zyrosite.com/YZ9VMxLvOEua5gr7/catering-Yg290qny18IpgpLQ.gif" alt="No Image">
-        </div>
+                    We are a third-party company and cannot guarantee the accuracy or completeness of the information
+                    provided. You should
+                    conduct your own research and consult with a legal professional for advice regarding your specific
+                    situation.
+
+                    By submitting your information to our website, you acknowledge that you are doing so at your own risk.
+                    You should ensure
+                    that you have read all terms and conditions and understand the potential consequences before submitting
+                    any information.</p>
+            </li>
+            <li class="mb-4">
+                <p class="tw-text-sm tw-font-bold"><span class="tw-text-red-600">6. </span>We provide estimated timelines
+                    for your convenience, but these are subject to change. By submitting your information,
+                    you agree that you have read and understood all terms and conditions, including our disclaimer regarding
+                    estimated
+                    timelines. We provide support, but the success of your application depends on various factors outside
+                    our control .</p>
+            </li>
+        </ul>
     </div>
 
     <div>
-        <h1 class="tw-mb-4 tw-text-xl md:tw-text-2xl tw-font-extrabold tw-text-center">FAQ</h1>
+        {{-- <h1 class="tw-mb-4 tw-text-xl md:tw-text-2xl tw-font-extrabold tw-text-center">FAQ</h1> --}}
         @yield('faq')
     </div>
 @endsection

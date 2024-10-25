@@ -12,9 +12,8 @@ class FormController extends Controller
     {
         $this->clients = new ClientController();
     }
-    public function showForm(string $id = null)
+    public function showForm(string $id = "License")
     {
-        if(!$id) $id="License";
         return view('pages.application', compact('id'));
     }
 

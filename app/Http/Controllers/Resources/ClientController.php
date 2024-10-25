@@ -32,7 +32,7 @@ class ClientController extends Controller
             'email' => $email,
             'phone' => $phone,
             'state' => $state,
-            'message' => $message
+            'message' => $message,
         ]);
     }
 
