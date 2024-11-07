@@ -13,9 +13,6 @@ ln -s public/ public_html
 #install dependencies
 ~/composer.phar install && npm install
 
-#run migrations
-php artisan migrate --force
-
 #build assets
 npm run build
 

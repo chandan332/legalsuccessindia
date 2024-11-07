@@ -3,17 +3,13 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
-use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Resources\UserController;
 use App\Http\Controllers\Resources\OrderController;
 use App\Http\Controllers\Resources\TransactionController;
 use App\Http\Controllers\Resources\ProductController;
 
 require __DIR__ . '/admin.php';
-
-Route::fallback(function () {
-    return response()->view('errors.404', [], 404);
-});
+require __DIR__ . '/payment.php';
 
 Route::view('/', 'pages.home');
 Route::view('/about', 'pages.about');
@@ -38,16 +34,9 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout')->middleware('auth');
 });
 
-Route::controller(PaymentController::class)->group(function () {
-    Route::get('/payment', 'index')->name('payment.index')->middleware('auth');
-    Route::get("/payment/success", 'success')->name('payment.success');
-    Route::post('/create-order', 'createOrder')->name('create.order');
-    Route::post('/payment-callback', 'paymentCallback')->name('payment.callback');
-});
-
 Route::controller(FormController::class)->group(function () {
-    Route::get("/application/{id?}", 'showForm')->whereIn('id', ['License', 'Renewal'])->name('form.show');
-    Route::post("/application", 'submitForm')->name("form.submit");
+    Route::get("/application/{id?}", 'showForm')->whereIn('id', ['license', 'renewal'])->name('form.show');
+    Route::post("/application/{id}", 'submitForm')->name("form.submit");
 });
 
 Route::resources([
@@ -56,3 +45,7 @@ Route::resources([
     'transactions' => TransactionController::class,
     'products' => ProductController::class
 ]);
+
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});

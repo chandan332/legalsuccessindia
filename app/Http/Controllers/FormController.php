@@ -12,7 +12,7 @@ class FormController extends Controller
     {
         $this->clients = new ClientController();
     }
-    public function showForm(string $id = "License")
+    public function showForm(string $id = "license")
     {
         return view('pages.application', compact('id'));
     }
@@ -27,7 +27,8 @@ class FormController extends Controller
             'message' => 'required'
         ]);
 
-        $this->clients->create($request->name, $request->email, $request->phone, $request->state, $request->message);
-        return redirect("/thank-you");
+        $client = $this->clients->create($request->name, $request->email, $request->phone, $request->state, $request->message);
+        request()->session()->put('id', $client->id);
+        return redirect("/payment/{$request->id}");
     }
 }

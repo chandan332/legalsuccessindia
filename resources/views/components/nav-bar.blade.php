@@ -46,11 +46,11 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="{{ route('form.show', ['id' => 'License']) }}">FSSAI
+                                <a class="dropdown-item" href="{{ route('form.show', ['id' => 'license']) }}">FSSAI
                                     License</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="{{ route('form.show', ['id' => 'Renewal']) }}">FSSAI
+                                <a class="dropdown-item" href="{{ route('form.show', ['id' => 'renewal']) }}">FSSAI
                                     Renewal</a>
                             </li>
                         </ul>

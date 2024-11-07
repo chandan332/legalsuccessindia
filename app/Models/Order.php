@@ -8,21 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    use HasFactory, HasUuids;
+    use HasFactory;
+
     protected $fillable = [
-        'user_id',
-        'created_order_id',
+        'id',
+        'payment_id',
         'amount',
-        'status',
     ];
 
-    public function user()
+    public function payment()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Payment::class);
     }
 
-    public function transactions()
+    public function transaction()
     {
-        return $this->hasMany(Transaction::class);
+        return $this->hasOne(Transaction::class);
     }
 }

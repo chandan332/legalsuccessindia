@@ -20,20 +20,22 @@ class ClientController extends Controller
      * Show the form for creating a new resource.
      */
     public function create(
-        string $name, 
+        string $name,
         string $email,
         string $phone,
         string $state,
         string $message
-        )
-    {
-        Client::create([
+    ) {
+        info("Creating client: $name, $email, $phone, $state, $message");
+        $client = Client::create([
             'name' => $name,
             'email' => $email,
             'phone' => $phone,
             'state' => $state,
             'message' => $message,
         ]);
+        info("Created client: " . print_r($client, true));
+        return $client;
     }
 
     /**

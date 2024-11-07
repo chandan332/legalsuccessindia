@@ -6,18 +6,28 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignUuid('user_id')->constrained()->onDelete('cascade');
-            $table->string('created_order_id')->unique();
+            // $table->foreignUuid('client_id')->constrained()->onDelete('cascade');
+            $table->string('businessName');
+            $table->string('businessAddress');
+            $table->integer('businessEmployees');
+            $table->string('areaName')->nullable();
+            $table->string('railwayName')->nullable();
+            $table->integer('pinCode');
+            $table->string('LandMarkName')->nullable();
+            $table->enum('platform', ['google', 'youtube', 'facebook', 'instagram', 'others'])->default('others');
+            $table->integer('fees');
+            $table->timestamps();
+        });
+
+        Schema::create('orders', function (Blueprint $table) {
+            $table->string('id')->primary();
+            $table->foreignUuid('payment_id')->constrained()->onDelete('cascade');
             $table->decimal('amount', 6, 2);
             $table->string('currency')->default('INR');
-            $table->enum('status', ['success', 'failed', 'pending'])->default('pending');
             $table->timestamps();
         });
 
@@ -26,16 +36,13 @@ return new class extends Migration
             $table->foreignUuid('order_id')->constrained()->onDelete('cascade');
             $table->string('created_payment_id')->unique();
             $table->string('created_signature')->unique();
-            $table->enum('status', ['success', 'failed', 'pending'])->default('pending');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
+        Schema::dropIfExists('payments');
         Schema::dropIfExists('orders');
         Schema::dropIfExists('transactions');
     }

@@ -87,7 +87,7 @@
 @endempty
 
 <body>
-    <div class="container overflow-hidden">
+    <div class="container">
         <!-- Navbar -->
         <x-nav-bar :route="$route" />
 

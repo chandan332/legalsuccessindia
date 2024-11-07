@@ -15,7 +15,6 @@ return new class extends Migration
             $table->string("phone");
             $table->string("state");
             $table->string("message");
-            $table->boolean('status')->default(false); 
             $table->timestamps();
         });
     }

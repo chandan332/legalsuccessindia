@@ -2,29 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\PaymentService;
+use App\Services\PaymentServices;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Resources\OrderController;
-use App\Http\Controllers\Resources\TransactionController;
+use App\Models\User;
+use App\Services\OrderServices;
 
 class PaymentController extends Controller
 {
-    private $paymentServices;
-    private $orderDataBase;
-    private $transactionDataBase;
-
-    public function __construct()
+    public function index(string $id = "license")
     {
-        $this->paymentServices = new PaymentService();
-        $this->orderDataBase = new OrderController();
-        $this->transactionDataBase = new TransactionController();
-    }
-
-    public function index(Request $request)
-    {
-        // $user = $request->user()->only(['name', 'email']);
-        return view('pages.payments.payment');
+        return view('pages.payments.payment', compact('id'));
     }
 
     public function success()
@@ -32,30 +19,23 @@ class PaymentController extends Controller
         return view('pages.payments.success');
     }
 
-    public function createOrder(Request $request)
+    public function createOrder(Request $request, PaymentServices $paymentServices, OrderServices $orderServices, User $user)
     {
         $values = $request->validate([
             'amount' => 'required|numeric',
         ]);
 
-        $amount = $values['amount'];
-
-        // create order
-        $result = $this->paymentServices->createOrder($amount);
-
-        if ($result['status']) {
-            $order = $result['data'];
-            // save in database
-            $return = $this->orderDataBase->create(Auth::id(), $order->id, $request->amount, 'success');
-            // create session
-            $this->createSession(['order_id' => $return['data']->id]);
-            // return
-            return response()->json(["id" => $order->id, "amount" => $order->amount, "currency" => $order->currency]);
+        try {
+            $order = $paymentServices->createOrder($values['amount']);
+            // $payment_id = $user::find(Auth::id())->payments()->latest()->first()->id;
+            // ($order->id && $payment_id) ? $orderServices->create(id: $order->id, payment_id: $payment_id, amount: $values['amount']) : null;
+            return response()->json(["id" => $order->id, "currency" => $order->currency, "amount" => $order->amount]);
+        } catch (\Exception $e) {
+            return response()->json(['status' => false, 'message' => $e->getMessage()]);
         }
-        return response()->json($result);
     }
 
-    public function paymentCallback(Request $request)
+    public function paymentCallback(Request $request, PaymentServices $paymentServices)
     {
         // validation
         $data = $request->validate([
@@ -63,18 +43,19 @@ class PaymentController extends Controller
             'razorpay_payment_id' => 'required',
             'razorpay_signature' => 'required',
         ]);
-
+        info("Payment Callback: " . print_r($data, true));
+    
         //check transaction
-        $this->paymentServices->verifyPaymentSignature($request->input('razorpay_order_id'), $request->input('razorpay_payment_id'), $request->input('razorpay_signature'));
+        // $paymentServices->verifyPaymentSignature([...$data]);
 
-        // save in database
-        $this->transactionDataBase->create(["order_id" => $this->getSession('order_id'), "created_payment_id" => $data['razorpay_payment_id'], "created_signature" => $data['razorpay_signature']]);
+        // // save in database
+        // $this->transactionDataBase->create(["order_id" => $this->getSession('order_id'), "created_payment_id" => $data['razorpay_payment_id'], "created_signature" => $data['razorpay_signature']]);
 
-        //destroy session order
-        session()->forget('order_id');
+        // //destroy session order
+        // session()->forget('order_id');
 
-        // redirect
-        return redirect('/success');
+        // // redirect
+        // return redirect('/success');
     }
 
     public function createSession(array $data)

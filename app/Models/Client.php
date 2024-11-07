@@ -20,4 +20,9 @@ class Client extends Model
         'state',
         'message',
     ];
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
+    }
 }
