@@ -31,7 +31,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-4 ">
-            <div class="tw-mt-10 tw-flex tw-flex-col tw-items-center tw-text-center tw-gap-2 tw-sticky tw-top-0">
+            <div class="tw-mt-10 tw-flex tw-flex-col tw-items-center tw-text-center tw-gap-2 tw-sticky tw-top-24">
                 <h1 class="text-decoration-underline tw-text-2xl fw-bold">Apply FSSAI Food License</h1>
                 <h3 class="fw-semibold tw-mb-4">Limited Time Offer:<br /> FSSAI registration {{ $id }} package
                     starting at ₹999,

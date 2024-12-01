@@ -9,9 +9,14 @@ use App\Services\OrderServices;
 
 class PaymentController extends Controller
 {
-    public function index(string $id = "license")
+    public function index()
     {
-        return view('pages.payments.payment', compact('id'));
+        return view('pages.payments.payment');
+    }
+    
+    public function paymentRenewalLisence(string $id = "license")
+    {
+        return view('pages.payments.paymentRenewalLisence', compact('id'));
     }
 
     public function success()
@@ -44,7 +49,7 @@ class PaymentController extends Controller
             'razorpay_signature' => 'required',
         ]);
         info("Payment Callback: " . print_r($data, true));
-    
+
         //check transaction
         // $paymentServices->verifyPaymentSignature([...$data]);
 
