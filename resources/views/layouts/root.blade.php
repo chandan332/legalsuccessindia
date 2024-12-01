@@ -87,9 +87,13 @@
 @endempty
 
 <body>
-    <div class="container">
+    <div class="shadow-lg tw-fixed tw-top-0 tw-w-full bg-white" style="z-index:5;">
+        <div class="container">
+            <x-nav-bar :route="$route" />
+        </div>
+    </div>
+    <div class="container" style="margin-top: 8rem;">
         <!-- Navbar -->
-        <x-nav-bar :route="$route" />
 
         <!-- Content -->
         @yield('content')
