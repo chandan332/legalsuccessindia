@@ -1,24 +1,17 @@
 services:
-  web:
+  devcontainer:
     build: 
       context: .
-    depends_on:
-      - db
-    networks:
-      - laravel_network
+    network_mode: service:db
+    command: sleep infinity
 
   db:
-    image: mysql:5.7
+    image: mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: secret
     volumes:
       - db_data:/var/lib/mysql
-    networks:
-      - laravel_network
 
 volumes:
   db_data:
-
-networks:
-  laravel_network:

@@ -72,18 +72,30 @@
         </h1>
         <ul>
             <li class="mb-4">
-                <p class="tw-text-sm tw-font-semibold"><span class="tw-text-red-600">1.</span> <span class="tw-font-extrabold">Reason for FSSAI Registration</span> <br/> FSSAI registration ensures your food business complies with India’s food safety laws, guaranteeing consumers high-quality and safe products, essential for legal operation and credibility.</p>
+                <p class="tw-text-sm tw-font-semibold"><span class="tw-text-red-600">1.</span> <span
+                        class="tw-font-extrabold">Reason for FSSAI Registration</span> <br /> FSSAI registration ensures
+                    your food business complies with India’s food safety laws, guaranteeing consumers high-quality and safe
+                    products, essential for legal operation and credibility.</p>
             </li>
             <li class="mb-4">
-                <p class="tw-text-sm tw-font-semibold"><span class="tw-text-red-600">2.</span> <span class="tw-font-extrabold">Benefits of FSSAI Registration</span> <br/>FSSAI certification builds consumer trust, enhances your brand image, supports business expansion, and helps prevent legal issues by demonstrating commitment to food safety and quality.
+                <p class="tw-text-sm tw-font-semibold"><span class="tw-text-red-600">2.</span> <span
+                        class="tw-font-extrabold">Benefits of FSSAI Registration</span> <br />FSSAI certification builds
+                    consumer trust, enhances your brand image, supports business expansion, and helps prevent legal issues
+                    by demonstrating commitment to food safety and quality.
                 </p>
             </li>
             <li class="mb-4">
-                <p class="tw-text-sm tw-font-semibold"><span class="tw-text-red-600">3.</span> <span class="tw-font-extrabold">FSSAI License Categories</span> <br/>FSSAI offers three license types based on business size and turnover: Basic Registration for small businesses, State License for medium-scale, and Central License for large-scale operations.
+                <p class="tw-text-sm tw-font-semibold"><span class="tw-text-red-600">3.</span> <span
+                        class="tw-font-extrabold">FSSAI License Categories</span> <br />FSSAI offers three license types
+                    based on business size and turnover: Basic Registration for small businesses, State License for
+                    medium-scale, and Central License for large-scale operations.
                 </p>
             </li>
             <li class="mb-4">
-                <p class="tw-text-sm tw-font-semibold"><span class="tw-text-red-600">4.</span> <span class="tw-font-extrabold">Document Requirements for FSSAI Registration</span> <br/>Documents needed include a completed application form, identity proof, business registration proof, and a detailed food safety management plan to verify operational compliance with FSSAI standards.</p>
+                <p class="tw-text-sm tw-font-semibold"><span class="tw-text-red-600">4.</span> <span
+                        class="tw-font-extrabold">Document Requirements for FSSAI Registration</span> <br />Documents needed
+                    include a completed application form, identity proof, business registration proof, and a detailed food
+                    safety management plan to verify operational compliance with FSSAI standards.</p>
             </li>
             <li class="mb-4">
                 <p class="tw-text-sm tw-font-bold"><span class="tw-text-red-600">5. </span>We offer guidance and information
@@ -114,7 +126,6 @@
             </li>
         </ul>
     </div>
-
 @endsection
 
 @section('script')

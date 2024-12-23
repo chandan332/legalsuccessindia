@@ -1,9 +1,13 @@
 {
 	"name": "LaravelApp",
-	"dockerComposeFile": "../compose.yml",
-	"service": "web",
+	"dockerComposeFile": "compose.yml",
+	"service": "devcontainer",
 	"shutdownAction": "stopCompose",
 	"workspaceFolder": "/workspaces",
+	"forwardPorts": [
+		3000,
+		8000
+	],
 	"customizations": {
 		"vscode": {
 			"settings": {
@@ -22,6 +26,5 @@
 			]
 		}
 	},
-	"postCreateCommand": "sh -c 'npm install && composer install && php artisan migrate --force && php artisan storage:link'",
-	"postStartCommand": "bash -c 'npm run dev & php artisan serve'"
+	"postCreateCommand": "npm install && composer install"
 }

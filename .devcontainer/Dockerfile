@@ -6,7 +6,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     php -r "unlink('composer-setup.php');"
 
-# Install unzip utility and libs needed by zip PHP extension 
+# Install unzip utility and libs needed by zip PHP extension
 RUN apt-get update && apt-get install -y \
     git\
     zlib1g-dev \
@@ -22,15 +22,3 @@ RUN composer global require laravel/installer && \
 #install node
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
-
-WORKDIR /workspaces
-
-COPY package*.json ./
-
-RUN npm install
-
-COPY . .
-
-RUN composer install
-
-EXPOSE 8000/tcp 3000/tcp

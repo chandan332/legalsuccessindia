@@ -39,6 +39,14 @@ Route::controller(FormController::class)->group(function () {
     Route::post("/application/{id}", 'submitForm')->name("form.submit");
 });
 
+// Route::get("/trademark/registration", function () {
+//     return view("pages.trademark.registration");
+// });
+
+// Route::get("/trademark/objection", function () {
+//     return view("pages.trademark.objection");
+// });
+
 Route::resources([
     'users' => UserController::class,
     'orders' => OrderController::class,

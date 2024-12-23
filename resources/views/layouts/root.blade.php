@@ -97,7 +97,7 @@
 
         <!-- Content -->
         @yield('content')
-        
+
         <!-- Footer -->
         <x-footer />
     </div>
@@ -114,6 +114,14 @@
                     <i class="fa-brands fa-whatsapp fa-beat tw-text-green-600"></i>
                 </a>
             </div>
+            {{-- <div>
+                <i class="tw-relative fa-solid fa-user fa-fade tw-text-yellow-500">
+                    <p id="randomText" class="tw-absolute tw-top-0 tw-right-0 tw-text-xs tw-text-black tw-font-bold">
+                        {{ rand(10, 20) }} </p>
+                    <span
+                        class="tw-absolute tw-top-[50%] tw-left-[-50%] tw-w-2 tw-h-2 tw-bg-green-500 tw-rounded-full"></span>
+                </i>
+            </div> --}}
         </div>
     </div>
     @yield('script')

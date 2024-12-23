@@ -37,6 +37,27 @@
                         @endif
                     </a>
                 </li>
+                {{-- <li class="nav-item me-2">
+                    <div class="dropdown">
+                        <a class="nav-link @if ($route == '/application') active @endif dropdown-toggle"
+                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-file"></i>
+                            Trademark & IP
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="/trademark/registration">
+                                    Trademark Registration
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/trademark/objection">
+                                    Trademark Objection
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li> --}}
                 <li class="nav-item me-2">
                     <div class="dropdown">
                         <a class="nav-link @if ($route == '/application') active @endif dropdown-toggle"
