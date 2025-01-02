@@ -62,7 +62,8 @@
             </h1>
             <p class="tw-text-md tw-font-normal">
                 This website is operated by legal success india private limited, and independent consultancy. We don't
-                represent any govenment agency, and forms provide on this site ain't official registration forms.
+                represent any govenment agency, and forms provide on this site ain't legal consultation forms "or"
+                consultancy forms.
             </p>
             <p class="tw-text-sm">
                 Copyright © 2024. Legal Success India All rights reserved.

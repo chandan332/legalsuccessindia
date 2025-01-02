@@ -5,7 +5,8 @@
         <img class="tw-m-auto tw-h-24" src="/images/legal_success_india_logo.png" alt="">
         @if (request()->path() === 'payment')
             <h1 class="tw-text-center tw-text-2xl">
-                The total number of payments done in the last hour is: <span class="tw-text-red-600 tw-font-bold">{{ rand(5, 10) }}</span>
+                The total number of payments done in the last hour is: <span
+                    class="tw-text-red-600 tw-font-bold">{{ rand(5, 10) }}</span>
             </h1>
         @endif
     </div>
@@ -14,7 +15,7 @@
         <div class="tw-w-[90%] tw-grid tw-grid-cols-2 tw-text-[0.775rem] md:tw-text-xl tw-mx-auto tw-my-4">
             <div class="tw-flex tw-flex-col tw-gap-2">
                 <p class="tw-me-auto tw-font-bold">STATUS:</p>
-                <p class="tw-me-auto tw-font-extrabold tw-text-[0.700rem] md:tw-text-xl">Pending for Payment</p>
+                <p class="tw-me-auto tw-font-extrabold tw-text-[0.700rem] md:tw-text-xl">Processing for Payment</p>
             </div>
             <div class="tw-flex tw-flex-col tw-gap-2">
                 <p class="tw-font-bold">REQUEST NUMBER:</p>
@@ -56,7 +57,8 @@
             <div class="card text-center h-100 border-0 ">
                 <img src="/images/money.gif" class="card-img-top tw-w-[50%] md:tw-w-2/5  m-auto" alt="...">
                 <div class="card-body tw-p-0">
-                    <p class="tw-text-[0.575rem] md:tw-text-lg">Your Money Will be Secured with 100% Refund policy</p>
+                    <p class="tw-text-[0.575rem] md:tw-text-lg">Your payment will be secured with a refund policy as per our
+                        terms</p>
                 </div>
             </div>
         </div>

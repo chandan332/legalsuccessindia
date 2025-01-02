@@ -23,12 +23,12 @@ class Form extends Component
 
     public $railwayName;
 
-    #[Validate('required|numeric')]
+    // #[Validate('required|numeric')]
     public $pinCode;
 
     public $LandMarkName;
 
-    #[Validate('required')]
+    // #[Validate('required')]
     public $platform;
 
     #[Validate('required|numeric')]
@@ -47,7 +47,7 @@ class Form extends Component
         $values['businessName'] = "No Name";
         $values['businessAddress'] = "No Address";
         $values['businessEmployees'] = 0;
-        Payment::create([...$values, 'areaName' => $this->areaName, 'railwayName' => $this->railwayName, 'LandMarkName' => $this->LandMarkName]);
+        // Payment::create([...$values, 'areaName' => $this->areaName, 'railwayName' => $this->railwayName, 'LandMarkName' => $this->LandMarkName]);
 
         return redirect()->route('payment.index', [
             "name" => $this->queryParams["name"],

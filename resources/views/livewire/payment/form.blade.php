@@ -1,6 +1,6 @@
 <div class="tw-relative">
     <form>
-        <div class="tw-mb-6">
+        {{-- <div class="tw-mb-6">
             <label for="businessName"
                 class="tw-block tw-mb-2 tw-text-sm tw-font-bold tw-text-gray-900 dark:tw-text-white">Business
                 Name</label>
@@ -99,7 +99,7 @@
             @error('platform')
                 <span class="tw-text-red-500">{{ $message }}</span>
             @enderror
-        </div>
+        </div> --}}
 
         <div class="tw-p-5 tw-my-4 tw-border tw-border-green-800 tw-bg-green-50">
             <div class="tw-flex tw-items-center tw-mb-6">
@@ -109,8 +109,7 @@
                     class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (1 Year) -
                     Annual
                     turnover less then 12
-                    Lakh. cost - 999 + 18%gst (Including Govt Fee) 
-                    {{-- = <span class="tw-font-semibold">1179rs</span></label> --}}
+                    Lakh.
             </div>
             <div class="tw-flex tw-items-center tw-mb-6">
                 <input id="fees1" type="radio" value="1300" name="fees" wire:model='fees'
@@ -119,8 +118,7 @@
                     class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (2 Year) -
                     Annual
                     turnover less then 12
-                    Lakh. cost - 1300 + 18%gst (Including Govt Fee) 
-                    {{-- = <span class="tw-font-semibold">1534rs</span></label> --}}
+                    Lakh.
             </div>
             <div class="tw-flex tw-items-center tw-mb-6">
                 <input id="fees1" type="radio" value="1500" name="fees" wire:model='fees'
@@ -129,8 +127,7 @@
                     class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (3 Year) -
                     Annual
                     turnover less then 12
-                    Lakh. cost - 1500 + 18%gst (Including Govt Fee) 
-                    {{-- = <span class="tw-font-semibold">1770rs</span></label> --}}
+                    Lakh.
             </div>
             <div class="tw-flex tw-items-center tw-mb-6">
                 <input id="fees1" type="radio" value="1800" name="fees" wire:model='fees'
@@ -139,8 +136,7 @@
                     class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (4 Year) -
                     Annual
                     turnover less then 12
-                    Lakh. cost - 1800 + 18%gst (Including Govt Fee) 
-                    {{-- = <span class="tw-font-semibold">2124rs</span></label> --}}
+                    Lakh.
             </div>
 
             <div class="tw-flex tw-items-center tw-mb-6">
@@ -150,8 +146,7 @@
                     class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (5 Year) -
                     Annual
                     turnover less then 12
-                    Lakh. cost - 1999 + 18%gst (Including Govt Fee) 
-                    {{-- = <span class="tw-font-semibold">2359rs</span></label> --}}
+                    Lakh.
             </div>
 
             <div class="tw-flex tw-items-center tw-mb-6">
@@ -160,8 +155,7 @@
                 <label for="fees3"
                     class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">State - Annual
                     turnover
-                    between 12 lakhs to 20 crores cost -1999+18%gst (Excluding Govt Fee) 
-                    {{-- = <span class="tw-font-semibold">2359rs</span></label> --}}
+                    between 12 lakhs to 20 crores.
             </div>
 
             <div class="tw-flex tw-items-center tw-mb-6">
@@ -169,8 +163,7 @@
                     class="tw-w-4 tw-h-4 tw-text-blue-600 tw-bg-gray-100 tw-border-gray-300   dark:tw-bg-gray-700 dark:tw-border-gray-600">
                 <label for="fees4"
                     class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Central - Annual
-                    turnover of the business above 20 crores cost 2999+18%gst (Excluding Govt Fee) 
-                    {{-- = <span class="tw-font-semibold">3540rs</span></label> --}}
+                    turnover of the business above 20 crores.
             </div>
             @error('fees')
                 <span class="tw-text-red-500">{{ $message }}</span>
