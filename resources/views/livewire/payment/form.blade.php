@@ -1,6 +1,6 @@
 <div class="tw-relative">
     <form>
-        {{-- <div class="tw-mb-6">
+        <div class="tw-mb-6">
             <label for="businessName"
                 class="tw-block tw-mb-2 tw-text-sm tw-font-bold tw-text-gray-900 dark:tw-text-white">Business
                 Name</label>
@@ -99,7 +99,7 @@
             @error('platform')
                 <span class="tw-text-red-500">{{ $message }}</span>
             @enderror
-        </div> --}}
+        </div>
 
         <div class="tw-p-5 tw-my-4 tw-border tw-border-green-800 tw-bg-green-50">
             <div class="tw-flex tw-items-center tw-mb-6">
@@ -115,7 +115,7 @@
                 <input id="fees1" type="radio" value="1300" name="fees" wire:model='fees'
                     class="tw-w-4 tw-h-4 tw-text-blue-600 tw-bg-gray-100 tw-border-gray-300   dark:tw-bg-gray-700 dark:tw-border-gray-600">
                 <label for="fees1"
-                    class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (2 Year) -
+                    class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (2 Years) -
                     Annual
                     turnover less then 12
                     Lakh.
@@ -124,7 +124,7 @@
                 <input id="fees1" type="radio" value="1500" name="fees" wire:model='fees'
                     class="tw-w-4 tw-h-4 tw-text-blue-600 tw-bg-gray-100 tw-border-gray-300   dark:tw-bg-gray-700 dark:tw-border-gray-600">
                 <label for="fees1"
-                    class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (3 Year) -
+                    class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (3 Years) -
                     Annual
                     turnover less then 12
                     Lakh.
@@ -133,7 +133,7 @@
                 <input id="fees1" type="radio" value="1800" name="fees" wire:model='fees'
                     class="tw-w-4 tw-h-4 tw-text-blue-600 tw-bg-gray-100 tw-border-gray-300   dark:tw-bg-gray-700 dark:tw-border-gray-600">
                 <label for="fees1"
-                    class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (4 Year) -
+                    class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (4 Years) -
                     Annual
                     turnover less then 12
                     Lakh.
@@ -143,7 +143,7 @@
                 <input id="fees2" type="radio" value="1999" name="fees" wire:model='fees'
                     class="tw-w-4 tw-h-4 tw-text-blue-600 tw-bg-gray-100 tw-border-gray-300   dark:tw-bg-gray-700 dark:tw-border-gray-600">
                 <label for="fees2"
-                    class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (5 Year) -
+                    class="tw-ms-2 tw-text-sm tw-font-medium tw-text-gray-900 dark:tw-text-gray-300">Basic (5 Years) -
                     Annual
                     turnover less then 12
                     Lakh.

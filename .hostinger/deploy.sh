@@ -1,25 +1,31 @@
 #!/bin/bash
+FOLDER='legalsuccessindia.com'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+WHITE='\033[0;37m'
 
-# remove .env
-rm .env
+error(){
+	if ! $1; then
+		echo -e "${RED} Error: ${GREEN} $2 ${WHITE}"
+        	exit 1
+	fi
+}
 
-#symlink .env to .env.example
-ln -s .env.example .env
+#remove the folder
+error "rm -rf ${FOLDER}/" "deleting ${FOLDER} folder failed..."
 
-#sysmlink public_html to public/
+#recreate the folder
+error "mkdir ${FOLDER}" "making ${FOLDER} folder failed"
 
-ln -s public/ public_html
+#go into the folder
+cd ${FOLDER}
 
-#install dependencies
-~/composer.phar install && npm install
+#clone a git repo
+error "git clone https://github.com/chandan332/legalsuccessindia.git ." "failed to clone the git repo"
 
-#build assets
-npm run build
+#run deploy
+chmod +x .hostinger/deploy.sh
+.hostinger/deploy.sh
 
-#generate key
-php artisan key:generate
-
-#symlink public/storage to strorage/app/public
-cd public
-ln -s ../storage/app/public storage
-cd ..
+#exit
+exit

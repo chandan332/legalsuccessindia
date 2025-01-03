@@ -3,12 +3,12 @@
 @section('content')
     <div class="tw-my-10">
         <img class="tw-m-auto tw-h-24" src="/images/legal_success_india_logo.png" alt="">
-        @if (request()->path() === 'payment')
+        {{-- @if (request()->path() === 'payment')
             <h1 class="tw-text-center tw-text-2xl">
                 The total number of payments done in the last hour is: <span
                     class="tw-text-red-600 tw-font-bold">{{ rand(5, 10) }}</span>
             </h1>
-        @endif
+        @endif --}}
     </div>
 
     <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 ">

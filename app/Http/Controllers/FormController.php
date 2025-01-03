@@ -29,6 +29,7 @@ class FormController extends Controller
 
         $client = $this->clients->create($request->name, $request->email, $request->phone, $request->state, $request->message);
         request()->session()->put('id', $client->id);
+        // return redirect("/thank-you");
         return redirect()->route("payment.index.id", ["id" => $request->id, "name" => $request->name, "phone" => $request->phone]);
     }
 }
