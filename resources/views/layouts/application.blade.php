@@ -9,7 +9,8 @@
         ],
         [
             'title' => 'Provide all the required documents',
-            'body' => 'Provide all the documents. Our team will initiate the paperwork on your behalf',
+            // 'body' => 'Provide all the documents. Our team will initiate the paperwork on your behalf',
+            'body' => 'Provide the necessary documents, and our team will guide you in initiating the paperwork',
             'image' => '/images/document.gif',
         ],
         [
@@ -99,8 +100,8 @@
             </li>
             <li class="mb-4">
                 <p class="tw-text-sm tw-font-bold"><span class="tw-text-red-600">5. </span>We offer guidance and information
-                    about government services but don't directly process applications. Our role is to provide information
-                    and guidance to help you avoid potential legal issues.
+                    about government services but don't directly process applications. we provide information and guidence
+                    to assist with compliance; final legal reponsibility lies with the user.
                     However, please
                     note that any information provided on this website is for informational purposes only and does not
                     constitute legal
@@ -117,12 +118,13 @@
                     any information.</p>
             </li>
             <li class="mb-4">
-                <p class="tw-text-sm tw-font-bold"><span class="tw-text-red-600">6. </span>We provide estimated timelines
-                    for your convenience, but these are subject to change. By submitting your information,
+                <p class="tw-text-sm tw-font-bold"><span class="tw-text-red-600">6. </span>Estimated timelines depend on
+                    factors such as document verification and govenment processing times and may vary accordingly. By
+                    submitting your information,
                     you agree that you have read and understood all terms and conditions, including our disclaimer regarding
                     estimated
-                    timelines. We provide support, but the success of your application depends on various factors outside
-                    our control .</p>
+                    timelines. We provide support, but the success of your application depends on factors like govenment
+                    processing and accurate document submission.</p>
             </li>
         </ul>
     </div>
