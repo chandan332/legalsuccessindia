@@ -1,6 +1,17 @@
 <div class="tw-relative">
     <form>
         <div class="tw-mb-6">
+            <label for="businessNature"
+                class="tw-block tw-mb-2 tw-text-sm tw-font-bold tw-text-gray-900 dark:tw-text-white">Business
+                Nature</label>
+            <input type="text" wire:model="businessNature" id="businessNature"
+                class="tw-bg-gray-50 tw-border tw-font-normal tw-border-gray-300 tw-text-gray-900 tw-text-sm tw-rounded-lg focus:tw-ring-blue-500 focus:tw-border-blue-500 tw-block tw-w-full tw-p-3 dark:tw-bg-gray-700 dark:tw-border-gray-600 dark:tw-placeholder-gray-400 dark:tw-text-white dark:focus:tw-ring-blue-500 dark:focus:tw-border-blue-500"
+                placeholder="Type Your Bussiness Nature" />
+            @error('businessNature')
+                <span class="tw-text-red-500">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="tw-mb-6">
             <label for="businessName"
                 class="tw-block tw-mb-2 tw-text-sm tw-font-bold tw-text-gray-900 dark:tw-text-white">Business
                 Name</label>
